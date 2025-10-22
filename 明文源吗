@@ -1,6 +1,6 @@
 import { connect } from 'cloudflare:sockets';
 
-let authToken = '351c9981-04b6-4103-aa4b-864aa9c91469';
+let authToken = '855d14b4-5a32-4114-8713-26117879dd75';
 let fallbackAddress = '';
 let fallbackPort = '443';
 let socks5Config = '';
@@ -15,6 +15,7 @@ let currentWorkerRegion = '';
 let manualWorkerRegion = '';
 let preferredIPsURL = '';
 
+//代理:ProxyIP.SG.CMLiussss.net
 // KV存储相关变量
 let kvStore = null;
 let kvConfig = {};
@@ -37,16 +38,16 @@ const regionMapping = {
 };
 
 let backupIPs = [
-    { domain: 'ProxyIP.US.CMLiussss.net', region: 'US', regionCode: 'US', port: 443 },
-    { domain: 'ProxyIP.SG.CMLiussss.net', region: 'SG', regionCode: 'SG', port: 443 },
-    { domain: 'ProxyIP.JP.CMLiussss.net', region: 'JP', regionCode: 'JP', port: 443 },
-    { domain: 'ProxyIP.HK.CMLiussss.net', region: 'HK', regionCode: 'HK', port: 443 },
-    { domain: 'ProxyIP.KR.CMLiussss.net', region: 'KR', regionCode: 'KR', port: 443 },
-    { domain: 'ProxyIP.DE.CMLiussss.net', region: 'DE', regionCode: 'DE', port: 443 },
-    { domain: 'ProxyIP.SE.CMLiussss.net', region: 'SE', regionCode: 'SE', port: 443 },
-    { domain: 'ProxyIP.NL.CMLiussss.net', region: 'NL', regionCode: 'NL', port: 443 },
-    { domain: 'ProxyIP.FI.CMLiussss.net', region: 'FI', regionCode: 'FI', port: 443 },
-    { domain: 'ProxyIP.GB.CMLiussss.net', region: 'GB', regionCode: 'GB', port: 443 },
+    { domain: 'US.vavaee.tk', region: 'US', regionCode: 'US', port: 443 },
+    { domain: 'SG.vavaee.tk', region: 'SG', regionCode: 'SG', port: 443 },
+    { domain: 'JP.vavaee.tk', region: 'JP', regionCode: 'JP', port: 443 },
+    { domain: 'HK.vavaee.tk', region: 'HK', regionCode: 'HK', port: 443 },
+    { domain: 'KR.vavaee.tk', region: 'KR', regionCode: 'KR', port: 443 },
+    { domain: 'DE.vavaee.tk', region: 'DE', regionCode: 'DE', port: 443 },
+    { domain: 'SE.vavaee.tk', region: 'SE', regionCode: 'SE', port: 443 },
+    { domain: 'NL.vavaee.tk', region: 'NL', regionCode: 'NL', port: 443 },
+    { domain: 'FI.vavaee.tk', region: 'FI', regionCode: 'FI', port: 443 },
+    { domain: 'GB.vavaee.tk', region: 'GB', regionCode: 'GB', port: 443 },
     { domain: 'ProxyIP.Oracle.cmliussss.net', region: 'Oracle', regionCode: 'Oracle', port: 443 },
     { domain: 'ProxyIP.DigitalOcean.CMLiussss.net', region: 'DigitalOcean', regionCode: 'DigitalOcean', port: 443 },
     { domain: 'ProxyIP.Vultr.CMLiussss.net', region: 'Vultr', regionCode: 'Vultr', port: 443 },
@@ -54,12 +55,7 @@ let backupIPs = [
 ];
 
 const directDomains = [
-    { name: "cloudflare.182682.xyz", domain: "cloudflare.182682.xyz" }, { name: "speed.marisalnc.com", domain: "speed.marisalnc.com" },
-    { domain: "freeyx.cloudflare88.eu.org" }, { domain: "bestcf.top" }, { domain: "cdn.2020111.xyz" }, { domain: "cfip.cfcdn.vip" },
-    { domain: "cf.0sm.com" }, { domain: "cf.090227.xyz" }, { domain: "cf.zhetengsha.eu.org" }, { domain: "cloudflare.9jy.cc" },
-    { domain: "cf.zerone-cdn.pp.ua" }, { domain: "cfip.1323123.xyz" }, { domain: "cnamefuckxxs.yuchen.icu" }, { domain: "cloudflare-ip.mofashi.ltd" },
-    { domain: "115155.xyz" }, { domain: "cname.xirancdn.us" }, { domain: "f3058171cad.002404.xyz" }, { domain: "8.889288.xyz" },
-    { domain: "cdn.tzpro.xyz" }, { domain: "cf.877771.xyz" }, { domain: "xn--b6gac.eu.org" }
+    { domain: "nono.911658.xyz" }
 ];
 
 const E_INVALID_DATA = atob('aW52YWxpZCBkYXRh');
@@ -1545,14 +1541,14 @@ async function handleSubscriptionPage(request, user = null) {
     <div class="matrix-bg"></div>
     <div class="matrix-rain"></div>
     <div class="matrix-code-rain" id="matrixCodeRain"></div>
-    <div class="matrix-text">代理订阅中心 v1.1</div>
+    <div class="matrix-text">Smile乄代理订阅中心 v9.9</div>
     <div class="container">
         <div class="header">
-            <h1 class="title">代理订阅中心</h1>
+            <h1 class="title">Smile乄代理订阅中心</h1>
             <p class="subtitle">多客户端支持 • 智能优选 • 一键生成</p>
         </div>
         <div class="card">
-            <h2 class="card-title">[ 选择客户端 ]</h2>
+            <h2 class="card-title">[ Smile乄选择客户端 ]</h2>
             <div class="client-grid">
                 <button class="client-btn" onclick="generateClientLink(atob('Y2xhc2g='))">CLASH</button>
                 <button class="client-btn" onclick="generateClientLink(atob('c3VyZ2U='))">SURGE</button>
@@ -1685,8 +1681,8 @@ async function handleSubscriptionPage(request, user = null) {
         <div class="card">
             <h2 class="card-title">[ 相关链接 ]</h2>
             <div style="text-align: center; margin: 20px 0;">
-                <a href="https://github.com/byJoey/cfnew" target="_blank" style="color: #00ff00; text-decoration: none; margin: 0 20px; font-size: 1.2rem; text-shadow: 0 0 5px #00ff00;">GitHub 项目</a>
-                <a href="https://www.youtube.com/@joeyblog" target="_blank" style="color: #00ff00; text-decoration: none; margin: 0 20px; font-size: 1.2rem; text-shadow: 0 0 5px #00ff00;">YouTube @joeyblog</a>
+                <a href="https://github.com/vavacc" target="_blank" style="color: #00ff00; text-decoration: none; margin: 0 20px; font-size: 1.2rem; text-shadow: 0 0 5px #00ff00;">GitHub 项目</a>
+                <a href="https://www.youtube.com/@Sky-CC" target="_blank" style="color: #00ff00; text-decoration: none; margin: 0 20px; font-size: 1.2rem; text-shadow: 0 0 5px #00ff00;">YouTube @Sky-CC</a>
             </div>
         </div>
     </div>
